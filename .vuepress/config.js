@@ -18,13 +18,13 @@ module.exports = {
     sidebar: 'auto',
     sidebar: [
       '/',
-      '/installation',
+      '/installation/',
       '/introduction',
       '/advanced',
     ],
     nav: [
       { text: 'Agenda', link: '/' },
-      { text: 'Installation', link: '/installation.md' },
+      { text: 'Installation', link: '/installation/README.md' },
       { text: 'Introduction', link: '/introduction.md' },
       { text: 'Advanced', link: '/advanced.md' }
     ]
