@@ -12,6 +12,6 @@
 
 ### [Installation](./installation/README.md)
 
-### [Introduction](./introduction.md)
+### [Introduction](./introduction/README.md)
 
 ### [Advanced](./advanced.md)
