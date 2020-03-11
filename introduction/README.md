@@ -33,13 +33,18 @@ There has been a lots of effort that has gone into domain-specific tools for var
 These tools are trusted by stakeholders and continue to improve.
 
 Co-simulation allows focus of new work to be on the “glue-ware”.
-This allows faster prototyping for research
+This allows faster prototyping for research.
 And this also encourages modularity of each subsystem.
-One can swap models as needed
+One can swap models as needed.
+
+See [Co-Simulation Overview](https://helics.readthedocs.io/en/latest/user-guide/co-simulation_overview.html) for more information.
 
 ## What is HELICS?
 
 [HELICS](https://helics.readthedocs.io/en/latest/) is an open-source cyber-physical-energy co-simulation framework for energy systems.
+HELICS is a co-simulation platform that has been designed to allow integration of these simulators across a variety of computation platforms and languages.
+
+See [user guide](https://helics.readthedocs.io/en/latest/user-guide/index.html) for more information.
 
 ### Software Capabilities
 
@@ -147,3 +152,15 @@ for t in range(0, 100):
 
 `helicsSharedLib` is a shared library that must be included in each federate and is the library that contains all these functions.
 This C/C++ shared library interfaces with the broker in other to communicate with other federates.
+
+See [Key Concepts](https://helics.readthedocs.io/en/latest/user-guide/helics_key_concepts.html) for more information.
+
+### HELICS Co-Simulation
+
+- https://helics.readthedocs.io/en/latest/user-guide/helics_co-sim_sequence.html
+- https://helics.readthedocs.io/en/latest/user-guide/federates.html
+- https://helics.readthedocs.io/en/latest/user-guide/value_federates.html
+- https://helics.readthedocs.io/en/latest/user-guide/message_federates.html
+- https://helics.readthedocs.io/en/latest/user-guide/timing.html
+- https://helics.readthedocs.io/en/latest/user-guide/simulator_integration.html
+- https://helics.readthedocs.io/en/latest/user-guide/simultaneous_cosimulations.html
