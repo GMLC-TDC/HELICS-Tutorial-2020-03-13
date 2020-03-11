@@ -135,7 +135,7 @@ This function returns a time back that you can safely move to.
 The time granted by the broker that a federate is allowed to move to will always be less than or equal to the requested time.
 If you wish to move to the requested time, you may use a while loop until that the granted time is equal to the requested time.
 
-```python hl_lines="4 5 6"
+```python
 for t in range(0, 100):
 
     requested_time = t
