@@ -19,16 +19,15 @@ Since parts of larger systems are modeled and simulated by different techniques,
 
 Co-simulation is a technique where the simulation of a coupled system can be achieved by composing the simulations of its parts.
 
+## What is Co-Simulation?
+
 In co-simulation, the different subsystems which form a coupled problem are modeled and simulated in a distributed manner.
 Hence, the modeling is done on the subsystem level without having the coupled problem in mind.
 Furthermore, the coupled simulation is carried out by running the subsystems in a black-box manner.
 During the simulation the subsystems will exchange data at various points in simulation time.
 
-
 Co-simulation allows execution of multiple distinct simulation objects together in coherent fashion.
 Co-simulation is used whenever a single simulator is insufficient to answer the relevant questions.
-
-## Why Co-Simulation?
 
 There has been a lots of effort that has gone into domain-specific tools for various subsystems.
 These tools are trusted by stakeholders and continue to improve.
