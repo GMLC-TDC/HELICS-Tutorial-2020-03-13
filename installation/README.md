@@ -107,19 +107,18 @@ julia -e "using Pkg; Pkg.add("HELICS")
 ```
 
 ```
-$ julia -e "using Pkg; Pkg.add("HELICS"); Pkg.instantiate()
+$ julia --project -e "using Pkg; Pkg.add("HELICS"); Pkg.instantiate()
   Updating registry at `~/.julia/registries/General`
   Updating git-repo `https://github.com/JuliaRegistries/General.git`
  Resolving package versions...
- Installed HELICS_jll ─ v2.4.1+0
- Installed HELICS ───── v0.6.2
-  Updating `~/gitrepos/HELICS-Tutorial-2020-03-13/Project.toml`
-  [81524022] + HELICS v0.6.2
-  Updating `~/gitrepos/HELICS-Tutorial-2020-03-13/Manifest.toml`
+ Installed HELICS ─ v0.7.0
+  Updating `~/gitrepos/HELICS-Tutorial-2020-03-13/installation/Project.toml`
+  [81524022] + HELICS v0.7.0
+  Updating `~/gitrepos/HELICS-Tutorial-2020-03-13/installation/Manifest.toml`
   [fa961155] + CEnum v0.2.0
   [ffbed154] + DocStringExtensions v0.8.1
-  [81524022] + HELICS v0.6.2
-  [ef3b0bb0] + HELICS_jll v2.4.1+0
+  [81524022] + HELICS v0.7.0
+  [ef3b0bb0] + HELICS_jll v2.4.1+1
   [8f1865be] + ZeroMQ_jll v4.3.2+1
   [2a0f44e3] + Base64
   [ade2ca70] + Dates
