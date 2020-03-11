@@ -10,8 +10,8 @@
 - 1.5hr: Basic HELICS hands-on
 - 4 hr: Advanced HELICS concepts
 
-### [Installation](/installation/README.md)
+### [Installation](./installation/README.md)
 
-### [Introduction](/introduction.md)
+### [Introduction](./introduction.md)
 
-### [Advanced](/advanced.md)
+### [Advanced](./advanced.md)
