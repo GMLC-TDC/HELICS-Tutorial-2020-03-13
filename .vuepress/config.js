@@ -14,12 +14,31 @@ module.exports = {
   },
   themeConfig: {
     smoothScroll: true,
-    displayAllHeaders: true,
     sidebar: 'auto',
     sidebar: [
-      '/',
-      '/guide/',
-      '/advanced/',
+        { title: "HELICS Tutorial",
+            path: '/',
+        },
+        {
+            title: 'Beginner',
+            path: '/beginner/',
+            collapsable: false,
+            sidebarDepth: 1,
+            children: [
+              '/beginner/',
+              '/beginner/installation/',
+              '/beginner/cosimulation-example',
+            ]
+        },
+        {
+            title: 'Advanced',
+            path: '/advanced/',
+            collapsable: false,
+            sidebarDepth: 1,
+            children: [
+              '/advanced/',
+            ]
+        },
     ],
     nav: [
       { text: 'Guide', link: '/guide/' },
