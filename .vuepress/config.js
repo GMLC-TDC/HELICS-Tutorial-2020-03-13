@@ -1,5 +1,5 @@
 const base = process.env.BASE_HREF || '/HELICS-Tutorial-2020-03-13';
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = true
 
 module.exports = {
   base,
@@ -18,15 +18,12 @@ module.exports = {
     sidebar: 'auto',
     sidebar: [
       '/',
-      '/installation/',
-      '/introduction/',
-      '/advanced',
+      '/guide/',
+      '/advanced/',
     ],
     nav: [
-      { text: 'Agenda', link: '/' },
-      { text: 'Installation', link: '/installation/README.md' },
-      { text: 'Introduction', link: '/introduction/README.md' },
-      { text: 'Advanced', link: '/advanced.md' }
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Advanced', link: '/advanced/' }
     ]
   }
 }
