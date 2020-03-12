@@ -7,7 +7,7 @@
       "global": true,
       "key": "topicA",
       "required": true,
-      "type": "complex"
+      "type": "double"
     }
   ],
   "timeDelta": 1.0

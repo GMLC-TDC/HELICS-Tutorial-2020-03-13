@@ -14,7 +14,7 @@ h.helicsFederateEnterExecutingMode(fed)
 
 for t in range(5, 10):
     currenttime = h.helicsFederateRequestTime(fed, t)
-    a = h.helicsInputGetComplex(topicA)
+    a = h.helicsInputGetDouble(topicA)
     print(f"a: {a}")
 
 h.helicsFederateFinalize(fed)
