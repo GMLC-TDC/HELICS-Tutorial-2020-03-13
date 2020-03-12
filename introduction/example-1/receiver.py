@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-import time
 import helics as h
-from math import pi
 
 fed = h.helicsCreateCombinationFederateFromConfig(
     os.path.join(os.path.dirname(__file__), "receiver.json")
@@ -11,11 +9,12 @@ fed = h.helicsCreateCombinationFederateFromConfig(
 topicA = h.helicsFederateGetSubscription(fed, "topicA")
 
 h.helicsFederateEnterExecutingMode(fed)
-
-for t in range(5, 10):
-    currenttime = h.helicsFederateRequestTime(fed, t)
-    a = h.helicsInputGetDouble(topicA)
-    print(f"a: {a}")
+currenttime = 0
+for t in range(5, 10 + 1):
+    while currenttime < t:
+        currenttime = h.helicsFederateRequestTime(fed, t)
+        a = h.helicsInputGetDouble(topicA)
+        print(f"Received a = {a} at time = {currenttime}")
 
 h.helicsFederateFinalize(fed)
 h.helicsFederateFree(fed)

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-import time
 import helics as h
 from math import pi
 
@@ -12,9 +11,13 @@ topicA = h.helicsFederateGetPublication(fed, "topicA")
 
 h.helicsFederateEnterExecutingMode(fed)
 
-for t in range(5, 10):
-    currenttime = h.helicsFederateRequestTime(fed, t)
-    h.helicsPublicationPublishDouble(topicA, pi)
+currenttime = 0
+
+for t in range(5, 10 + 1):
+    while currenttime < t:
+        currenttime = h.helicsFederateRequestTime(fed, t)
+        print(f"Sending value = {pi} at time = {currenttime}")
+        h.helicsPublicationPublishDouble(topicA, pi)
 
 h.helicsFederateFinalize(fed)
 h.helicsFederateFree(fed)
