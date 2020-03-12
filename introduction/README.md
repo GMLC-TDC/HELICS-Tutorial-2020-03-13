@@ -168,3 +168,4 @@ See [Key Concepts](https://helics.readthedocs.io/en/latest/user-guide/helics_key
 ## Examples
 
 - [Example 1](./example-1/README.md)
+- [Example 2](./example-2/README.md)

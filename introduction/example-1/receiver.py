@@ -13,8 +13,8 @@ currenttime = 0
 for t in range(5, 10 + 1):
     while currenttime < t:
         currenttime = h.helicsFederateRequestTime(fed, t)
-        a = h.helicsInputGetDouble(topicA)
-        print(f"Received a = {a} at time = {currenttime}")
+    a = h.helicsInputGetDouble(topicA)
+    print(f"Received a = {a} at time = {currenttime}")
 
 h.helicsFederateFinalize(fed)
 h.helicsFederateFree(fed)

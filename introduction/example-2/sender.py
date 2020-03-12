@@ -16,8 +16,8 @@ currenttime = 0
 for t in range(5, 10 + 1):
     while currenttime < t:
         currenttime = h.helicsFederateRequestTime(fed, t)
-    print(f"Sending value = {pi} at time = {currenttime}")
-    h.helicsPublicationPublishDouble(topicA, pi)
+        print(f"Sending value = {pi} at time = {currenttime}")
+        h.helicsPublicationPublishDouble(topicA, pi)
 
 h.helicsFederateFinalize(fed)
 h.helicsFederateFree(fed)
