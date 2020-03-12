@@ -1,0 +1,14 @@
+{
+  "coreType": "zmq",
+  "loglevel": 7,
+  "name": "receiver",
+  "subscriptions": [
+    {
+      "global": true,
+      "key": "topicA",
+      "required": true,
+      "type": "complex"
+    }
+  ],
+  "timeDelta": 1.0
+}
