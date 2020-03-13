@@ -28,6 +28,8 @@ module.exports = {
               '/beginner/',
               '/beginner/installation/',
               '/beginner/cosimulation-example',
+              '/beginner/inside-a-helics-install',
+              '/beginner/helics-building-blocks',
             ]
         },
         {
