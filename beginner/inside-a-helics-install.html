@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Inside a HELICS installation | HELICS Tutorial</title>
+    <meta name="description" content="HELICS Tutorial">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/HELICS-Tutorial-2020-03-13/assets/css/0.styles.ba8aa102.css" as="style"><link rel="preload" href="/HELICS-Tutorial-2020-03-13/assets/js/app.33e126a5.js" as="script"><link rel="preload" href="/HELICS-Tutorial-2020-03-13/assets/js/2.e4476a02.js" as="script"><link rel="preload" href="/HELICS-Tutorial-2020-03-13/assets/js/21.d0c7c791.js" as="script"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/10.a94ea896.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/11.80aa02bb.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/12.7eb8b790.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/13.ad025528.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/14.1cd8ae90.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/15.4ee7bc04.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/16.7c0e2478.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/17.cc6fc7b6.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/18.0cc728f0.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/19.0172d39f.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/20.0dd46757.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/22.8ebf6701.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/23.a5d8d89d.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/24.59d3b9e9.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/3.f7b728dd.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/4.13232a69.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/5.77ce9090.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/6.6fbf6e3d.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/7.13889ff0.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/8.1767752a.js"><link rel="prefetch" href="/HELICS-Tutorial-2020-03-13/assets/js/9.05aeb5a5.js">
+    <link rel="stylesheet" href="/HELICS-Tutorial-2020-03-13/assets/css/0.styles.ba8aa102.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/HELICS-Tutorial-2020-03-13/" class="home-link router-link-active"><!----> <span class="site-name">HELICS Tutorial</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/HELICS-Tutorial-2020-03-13/beginner/" class="nav-link router-link-active">
+  Beginner
+</a></div><div class="nav-item"><a href="/HELICS-Tutorial-2020-03-13/advanced/" class="nav-link">
+  Advanced
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/HELICS-Tutorial-2020-03-13/beginner/" class="nav-link router-link-active">
+  Beginner
+</a></div><div class="nav-item"><a href="/HELICS-Tutorial-2020-03-13/advanced/" class="nav-link">
+  Advanced
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/HELICS-Tutorial-2020-03-13/" class="sidebar-link">HELICS Tutorial</a></li><li><section class="sidebar-group depth-0"><a href="/HELICS-Tutorial-2020-03-13/beginner/" class="sidebar-heading clickable router-link-active open"><span>Beginner</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/HELICS-Tutorial-2020-03-13/beginner/" class="sidebar-link">Introduction</a></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/installation/" class="sidebar-link">Installation</a></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/a-cosimulation-example.html" class="sidebar-link">A Cosimulation Example</a></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/inside-a-helics-install.html" class="active sidebar-link">Inside a HELICS installation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/HELICS-Tutorial-2020-03-13/beginner/inside-a-helics-install.html#helics-as-a-library" class="sidebar-link">HELICS as a library</a></li><li class="sidebar-sub-header"><a href="/HELICS-Tutorial-2020-03-13/beginner/inside-a-helics-install.html#using-the-helics-library" class="sidebar-link">Using the HELICS library</a></li></ul></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/helics-building-blocks.html" class="sidebar-link">Building Blocks of HELICS</a></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/revisiting-a-co-simulation-example.html" class="sidebar-link">Revisiting the Cosimulation Example</a></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/a-note-on-timing.html" class="sidebar-link">A Note on Timing</a></li><li><a href="/HELICS-Tutorial-2020-03-13/beginner/debugging-helics-cosimulation-tips.html" class="sidebar-link">Tips for debugging</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/HELICS-Tutorial-2020-03-13/advanced/" class="sidebar-heading clickable"><span>Advanced</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/HELICS-Tutorial-2020-03-13/advanced/" class="sidebar-link">Introduction</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/values-vs-messages/" class="sidebar-link">Values vs Messages</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/filters/" class="sidebar-link">Filters</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/async/" class="sidebar-link">Async request time</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/callbacks/" class="sidebar-link">Callbacks</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/helics-cli/" class="sidebar-link">helics-cli</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/multi-node/" class="sidebar-link">Multi-node HELICS Co-simulation</a></li><li><a href="/HELICS-Tutorial-2020-03-13/advanced/co-iteration/" class="sidebar-link">Co-iteration</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="inside-a-helics-installation"><a href="#inside-a-helics-installation" class="header-anchor">#</a> Inside a HELICS installation</h1> <h2 id="helics-as-a-library"><a href="#helics-as-a-library" class="header-anchor">#</a> HELICS as a library</h2> <p>Let's say that I've installed HELICS in <code>~/local/helics-v2.4.1</code>. Let's look at what's in that folder:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">ls</span> ~/local/helics-v2.4.1/
+
+Permissions Size Date Modified Name
+drwxr-xr-x     -  <span class="token number">3</span> Mar 07:41  bin/
+drwxr-xr-x     -  <span class="token number">3</span> Mar 07:41  include/
+drwxr-xr-x     -  <span class="token number">3</span> Mar 07:41  lib/
+drwxr-xr-x     -  <span class="token number">3</span> Mar 07:41  share/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>We have a <code>bin</code> for binary files, a <code>include</code> for header files, a <code>lib</code> for library files and <code>share</code> for documentation, etc.</p> <p>Let's see what's in the <code>bin</code> folder:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">ls</span> ~/local/helics-v2.4.1/bin
+
+Permissions Size Date Modified Name
+.rwxr-xr-x  121k  <span class="token number">3</span> Mar 07:41  helics-config*
+.rwxr-xr-x   29M  <span class="token number">3</span> Mar 07:41  helics_app*
+.rwxr-xr-x   22M  <span class="token number">3</span> Mar 07:41  helics_broker*
+.rwxr-xr-x   22M  <span class="token number">3</span> Mar 07:41  helics_broker_server*
+.rwxr-xr-x   25M  <span class="token number">3</span> Mar 07:41  helics_player*
+.rwxr-xr-x   25M  <span class="token number">3</span> Mar 07:41  helics_recorder*
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>My &quot;installation&quot; is a build from source and is a &quot;debug&quot; build. That is why the size of each file is around 25 MB.</p> <p>Let's look at some files from a pre-packaged installer, such as <code>conda</code>.</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">ls</span> /Users/<span class="token environment constant">USER</span>/miniconda3/envs/helics-pip-env/bin/helics_*
+
+Permissions Size Date Modified Name
+.rwxrwxr-x   <span class="token number">263</span> <span class="token number">12</span> Mar <span class="token number">11</span>:31  /Users/<span class="token environment constant">USER</span>/miniconda3/envs/helics-pip-env/bin/helics_app*
+.rwxrwxr-x   <span class="token number">269</span> <span class="token number">12</span> Mar <span class="token number">11</span>:31  /Users/<span class="token environment constant">USER</span>/miniconda3/envs/helics-pip-env/bin/helics_broker*
+.rwxrwxr-x   <span class="token number">283</span> <span class="token number">12</span> Mar <span class="token number">11</span>:31  /Users/<span class="token environment constant">USER</span>/miniconda3/envs/helics-pip-env/bin/helics_broker_server*
+.rwxrwxr-x   <span class="token number">269</span> <span class="token number">12</span> Mar <span class="token number">11</span>:31  /Users/<span class="token environment constant">USER</span>/miniconda3/envs/helics-pip-env/bin/helics_player*
+.rwxrwxr-x   <span class="token number">273</span> <span class="token number">12</span> Mar <span class="token number">11</span>:31  /Users/<span class="token environment constant">USER</span>/miniconda3/envs/helics-pip-env/bin/helics_recorder*
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>That is just around 300 bytes.</p> <p>Let's go ahead and run <code>man helics_broker</code>.</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">man</span> helics_broker
+
+HELICS_BROKER<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>                                          HELICS_BROKER<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+
+
+NAME
+       helics_broker - intermediary or root <span class="token keyword">in</span> the HELICS hierarchy
+
+SYNOPSIS
+       helics_broker <span class="token punctuation">[</span>-v<span class="token operator">|</span>--version<span class="token punctuation">]</span> <span class="token punctuation">[</span>-h<span class="token operator">|</span>-?<span class="token operator">|</span>--help<span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--quiet<span class="token punctuation">]</span> <span class="token punctuation">[</span>--config-file <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>-t<span class="token operator">|</span>--core<span class="token operator">|</span>--type<span class="token operator">|</span>--coretype <span class="token operator">&lt;</span>type<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>-f<span class="token operator">|</span>-m<span class="token operator">|</span>--federates<span class="token operator">|</span>--minfederates<span class="token operator">|</span>--minfed <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>-n<span class="token operator">|</span>--name<span class="token operator">|</span>--identifier <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--maxiter<span class="token operator">|</span>--maxiterations <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--minbroker<span class="token operator">|</span>--minbrokers<span class="token operator">|</span>--minbrokercount <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--key<span class="token operator">|</span>--broker_key <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--no_ping<span class="token operator">|</span>--slow_responding<span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--conservative_time_policy<span class="token operator">|</span>--restrictive_time_policy<span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--local<span class="token operator">|</span>--ipv4<span class="token operator">|</span>--ipv6<span class="token operator">|</span>--all<span class="token operator">|</span>--external<span class="token punctuation">]</span> <span class="token punctuation">[</span>--brokeraddress <span class="token operator">&lt;</span>address<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--reuse_address<span class="token punctuation">]</span> <span class="token punctuation">[</span>--broker <span class="token operator">&lt;</span>identifier<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--brokername <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--maxsize <span class="token operator">&lt;</span>buffer size<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--maxcount <span class="token operator">&lt;</span>num msgs<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--networkretries <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--osport<span class="token operator">|</span>--use_os_port<span class="token punctuation">]</span> <span class="token punctuation">[</span>--autobroker<span class="token punctuation">]</span> <span class="token punctuation">[</span>--brokerinit <span class="token operator">&lt;</span>init str<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--client<span class="token operator">|</span>--server<span class="token punctuation">]</span> <span class="token punctuation">[</span>-p<span class="token operator">|</span>--port <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--brokerport <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--localport <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+           <span class="token punctuation">[</span>--portstart <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--interface<span class="token operator">|</span>--localinterface <span class="token operator">&lt;</span>network interface<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>:
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><code>man</code> gives us a manual for any command line tool if it exists.
+We can see that the <code>helics_broker</code> command line inteface has quite a few options.
+We will go through some of that in this tutorial.</p> <p>Let's peek inside the library <code>lib</code> folder.</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">ls</span> ~/local/helics-v2.4.1/lib
+
+Permissions Size Date Modified Name
+.rwxr-xr-x   25M  <span class="token number">3</span> Mar 07:41  libhelicsSharedLib.2.4.1.dylib*
+lrwxr-xr-x    <span class="token number">30</span>  <span class="token number">3</span> Mar 07:41  libhelicsSharedLib.2.dylib -<span class="token operator">&gt;</span> libhelicsSharedLib.2.4.1.dylib
+lrwxr-xr-x    <span class="token number">26</span>  <span class="token number">3</span> Mar 07:41  libhelicsSharedLib.dylib -<span class="token operator">&gt;</span> libhelicsSharedLib.2.dylib
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>And finally, let's look at what is in the <code>include</code> folder:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ tree ~/local/helics-v2.4.1/include
+
+/Users/<span class="token environment constant">USER</span>/local/helics-v2.4.1/include
+└── helics
+   ├── chelics.h
+   ├── cpp98
+   │  ├── Broker.hpp
+   │  ├── CombinationFederate.hpp
+   │  ├── config.hpp
+   │  ├── Core.hpp
+   │  ├── Endpoint.hpp
+   │  ├── Federate.hpp
+   │  ├── Filter.hpp
+   │  ├── helics.hpp
+   │  ├── helicsExceptions.hpp
+   │  ├── Input.hpp
+   │  ├── MessageFederate.hpp
+   │  ├── Publication.hpp
+   │  └── ValueFederate.hpp
+   ├── helics98.hpp
+   ├── helics_enums.h
+   └── shared_api_library
+      ├── api-data.h
+      ├── helics.h
+      ├── helics_export.h
+      ├── helicsCallbacks.h
+      ├── MessageFederate.h
+      ├── MessageFilters.h
+      └── ValueFederate.h
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="using-the-helics-library"><a href="#using-the-helics-library" class="header-anchor">#</a> Using the HELICS library</h2> <p>You'll notice that this installation does not have any Python files in them.
+However, we can use HELICS in Python by loading the shared library in the lib folder, and calling functions using the C API.</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>ipython
+Python <span class="token number">3.7</span><span class="token number">.6</span> <span class="token punctuation">(</span>default<span class="token punctuation">,</span> Jan  <span class="token number">8</span> <span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">:</span><span class="token number">42</span><span class="token punctuation">:</span><span class="token number">34</span><span class="token punctuation">)</span>
+Type <span class="token string">'copyright'</span><span class="token punctuation">,</span> <span class="token string">'credits'</span> <span class="token keyword">or</span> <span class="token string">'license'</span> <span class="token keyword">for</span> more information
+IPython <span class="token number">7.12</span><span class="token number">.0</span> <span class="token operator">-</span><span class="token operator">-</span> An enhanced Interactive Python<span class="token punctuation">.</span> Type <span class="token string">'?'</span> <span class="token keyword">for</span> <span class="token builtin">help</span><span class="token punctuation">.</span>
+
+In <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">import</span> ctypes
+
+In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lib <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>CDLL<span class="token punctuation">(</span>&quot;<span class="token operator">~</span><span class="token operator">/</span>local<span class="token operator">/</span>helics<span class="token operator">-</span>v2<span class="token punctuation">.</span><span class="token number">4.1</span><span class="token operator">/</span>lib<span class="token operator">/</span>libhelicsSharedL
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span> ib<span class="token punctuation">.</span><span class="token number">2.4</span><span class="token number">.1</span><span class="token punctuation">.</span>dylib&quot;<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>Let's call the <code>helicsGetVersion</code> function.</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lib<span class="token punctuation">.</span>helicsGetVersion<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token number">182664400</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>This returns a number unfortunately.
+However, we know that this number is a pointer to a string.</p> <p>We can tell Python that the return type is a <code>char *</code> type, i.e. a pointer to a char.</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lib<span class="token punctuation">.</span>helicsGetVersion<span class="token punctuation">.</span>restype <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_char_p
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>If we call the function again, we can get the version number.</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lib<span class="token punctuation">.</span>helicsGetVersion<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">b'2.4.0 (2020-02-04)'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>This is an example of how to call a C function from Python.
+Finding the types of every function can be tedious.
+Fortunately, we have a Python library mimics the C API function in Python function.</p> <p>There are a lot of other functions in HELICS available through the C API, and all these functions are exposed in the Python library as well.</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ nm ~/local/helics-v2.4.1/lib/libhelicsSharedLib.2.4.1.dylib <span class="token operator">|</span> rg <span class="token string">'_helics'</span>
+
+<span class="token number">155810</span>:0000000000005ea0 T _helicsBrokerAddDestinationFilterToEndpoint
+<span class="token number">155811</span>:0000000000005d90 T _helicsBrokerAddSourceFilterToEndpoint
+<span class="token number">155812</span>:00000000000056f0 T _helicsBrokerClone
+<span class="token number">155813</span>:0000000000005990 T _helicsBrokerDataLink
+<span class="token number">155814</span>:0000000000006bf0 T _helicsBrokerDestroy
+<span class="token number">155815</span>:0000000000006aa0 T _helicsBrokerDisconnect
+<span class="token number">155816</span>:0000000000006c20 T _helicsBrokerFree
+<span class="token number">155817</span>:0000000000006700 T _helicsBrokerGetAddress
+<span class="token number">155818</span>:0000000000006600 T _helicsBrokerGetIdentifier
+<span class="token number">155819</span>:0000000000005930 T _helicsBrokerIsConnected
+<span class="token number">155820</span>:00000000000058a0 T _helicsBrokerIsValid
+<span class="token number">155821</span>:0000000000005fb0 T _helicsBrokerMakeConnections
+<span class="token number">155822</span>:0000000000005bb0 T _helicsBrokerSetGlobal
+<span class="token number">155823</span>:0000000000005ce0 T _helicsBrokerSetLogFile
+<span class="token number">155824</span>:000000000004dd60 T _helicsBrokerSetLoggingCallback
+<span class="token number">155825</span>:0000000000006950 T _helicsBrokerWaitForDisconnect
+<span class="token number">155826</span>:00000000000084c0 T _helicsCleanupLibrary
+<span class="token number">155827</span>:00000000000076c0 T _helicsCloseLibrary
+<span class="token number">155828</span>:00000000000061b0 T _helicsCoreAddDestinationFilterToEndpoint
+<span class="token number">155829</span>:00000000000060a0 T _helicsCoreAddSourceFilterToEndpoint
+<span class="token number">155830</span>:00000000000042e0 T _helicsCoreClone
+<span class="token number">155831</span>:0000000000006830 T _helicsCoreConnect
+<span class="token number">155832</span>:0000000000005aa0 T _helicsCoreDataLink
+<span class="token number">155833</span>:0000000000006cc0 T _helicsCoreDestroy
+<span class="token number">155834</span>:00000000000068d0 T _helicsCoreDisconnect
+<span class="token number">155835</span>:0000000000006cf0 T _helicsCoreFree
+<span class="token number">155836</span>:0000000000006770 T _helicsCoreGetAddress
+<span class="token number">155837</span>:0000000000006690 T _helicsCoreGetIdentifier
+<span class="token number">155838</span>:00000000000063b0 T _helicsCoreIsConnected
+<span class="token number">155839</span>:0000000000004490 T _helicsCoreIsValid
+<span class="token number">155840</span>:00000000000062c0 T _helicsCoreMakeConnections
+<span class="token number">155841</span>:000000000004a2b0 T _helicsCoreRegisterCloningFilter
+<span class="token number">155842</span>:00000000000498b0 T _helicsCoreRegisterFilter
+<span class="token number">155843</span>:0000000000006410 T _helicsCoreSetGlobal
+<span class="token number">155844</span>:0000000000006540 T _helicsCoreSetLogFile
+<span class="token number">155845</span>:000000000004df90 T _helicsCoreSetLoggingCallback
+<span class="token number">155846</span>:00000000000067e0 T _helicsCoreSetReadyToInit
+<span class="token number">155847</span>:0000000000006a10 T _helicsCoreWaitForDisconnect
+<span class="token number">155848</span>:0000000000004a00 T _helicsCreateBroker
+<span class="token number">155849</span>:0000000000005150 T _helicsCreateBrokerFromArgs
+<span class="token number">155850</span>:00000000000221c0 T _helicsCreateCombinationFederate
+<span class="token number">155851</span>:0000000000022750 T _helicsCreateCombinationFederateFromConfig
+<span class="token number">155852</span>:00000000000033a0 T _helicsCreateCore
+<span class="token number">155853</span>:0000000000003c10 T _helicsCreateCoreFromArgs
+<span class="token number">155854</span>:0000000000020140 T _helicsCreateFederateInfo
+<span class="token number">155855</span>:00000000000219b0 T _helicsCreateMessageFederate
+<span class="token number">155856</span>:0000000000021f20 T _helicsCreateMessageFederateFromConfig
+<span class="token number">155857</span>:0000000000007960 T _helicsCreateQuery
+<span class="token number">155858</span>:00000000000210a0 T _helicsCreateValueFederate
+<span class="token number">155859</span>:0000000000021710 T _helicsCreateValueFederateFromConfig
+<span class="token number">155860</span>:0000000000044190 T _helicsEndpointClearMessages
+<span class="token number">155861</span>:0000000000042220 T _helicsEndpointGetDefaultDestination
+<span class="token number">155862</span>:0000000000044370 T _helicsEndpointGetInfo
+<span class="token number">155863</span>:0000000000043750 T _helicsEndpointGetMessage
+<span class="token number">155864</span>:0000000000043b70 T _helicsEndpointGetMessageObject
+<span class="token number">155865</span>:00000000000442c0 T _helicsEndpointGetName
+<span class="token number">155866</span>:0000000000044580 T _helicsEndpointGetOption
+<span class="token number">155867</span>:00000000000441e0 T _helicsEndpointGetType
+<span class="token number">155868</span>:00000000000435f0 T _helicsEndpointHasMessage
+<span class="token number">155869</span>:00000000000436d0 T _helicsEndpointPendingMessages
+<span class="token number">155870</span>:00000000000427d0 T _helicsEndpointSendEventRaw
+<span class="token number">155871</span>:0000000000042db0 T _helicsEndpointSendMessage
+<span class="token number">155872</span>:00000000000433a0 T _helicsEndpointSendMessageObject
+<span class="token number">155873</span>:00000000000422a0 T _helicsEndpointSendMessageRaw
+<span class="token number">155874</span>:0000000000042080 T _helicsEndpointSetDefaultDestination
+<span class="token number">155875</span>:0000000000044460 T _helicsEndpointSetInfo
+<span class="token number">155876</span>:0000000000044660 T _helicsEndpointSetOption
+<span class="token number">155877</span>:0000000000043460 T _helicsEndpointSubscribe
+<span class="token number">155878</span>:0000000000002350 T _helicsErrorClear
+<span class="token number">155879</span>:0000000000002330 T _helicsErrorInitialize
+<span class="token number">155880</span>:00000000000440e0 T _helicsFederateClearMessages
+<span class="token number">155881</span>:0000000000035cd0 T _helicsFederateClearUpdates
+<span class="token number">155882</span>:00000000000229f0 T _helicsFederateClone
+<span class="token number">155883</span>:0000000000043fb0 T _helicsFederateCreateMessageObject
+<span class="token number">155884</span>:0000000000006b20 T _helicsFederateDestroy
+<span class="token number">155885</span>:00000000000232d0 T _helicsFederateEnterExecutingMode
+<span class="token number">155886</span>:0000000000023520 T _helicsFederateEnterExecutingModeAsync
+<span class="token number">155887</span>:0000000000023630 T _helicsFederateEnterExecutingModeComplete
+<span class="token number">155888</span>:0000000000023350 T _helicsFederateEnterExecutingModeIterative
+<span class="token number">155889</span>:0000000000023590 T _helicsFederateEnterExecutingModeIterativeAsync
+<span class="token number">155890</span>:00000000000236b0 T _helicsFederateEnterExecutingModeIterativeComplete
+<span class="token number">155891</span>:0000000000023120 T _helicsFederateEnterInitializingMode
+<span class="token number">155892</span>:0000000000023190 T _helicsFederateEnterInitializingModeAsync
+<span class="token number">155893</span>:0000000000023260 T _helicsFederateEnterInitializingModeComplete
+<span class="token number">155894</span>:0000000000022fd0 T _helicsFederateFinalize
+<span class="token number">155895</span>:0000000000023040 T _helicsFederateFinalizeAsync
+<span class="token number">155896</span>:00000000000230b0 T _helicsFederateFinalizeComplete
+<span class="token number">155897</span>:0000000000006b50 T _helicsFederateFree
+<span class="token number">155898</span>:0000000000022c10 T _helicsFederateGetCoreObject
+<span class="token number">155899</span>:00000000000246e0 T _helicsFederateGetCurrentTime
+<span class="token number">155900</span>:0000000000041ae0 T _helicsFederateGetEndpoint
+<span class="token number">155901</span>:0000000000041e10 T _helicsFederateGetEndpointByIndex
+<span class="token number">155902</span>:0000000000044320 T _helicsFederateGetEndpointCount
+<span class="token number">155903</span>:000000000004a650 T _helicsFederateGetFilter
+<span class="token number">155904</span>:000000000004aa40 T _helicsFederateGetFilterByIndex
+<span class="token number">155905</span>:000000000004a9f0 T _helicsFederateGetFilterCount
+<span class="token number">155906</span>:0000000000024530 T _helicsFederateGetFlagOption
+<span class="token number">155907</span>:0000000000035430 T _helicsFederateGetInput
+<span class="token number">155908</span>:0000000000035760 T _helicsFederateGetInputByIndex
+<span class="token number">155909</span>:0000000000039320 T _helicsFederateGetInputCount
+<span class="token number">155910</span>:00000000000245e0 T _helicsFederateGetIntegerProperty
+<span class="token number">155911</span>:0000000000043c90 T _helicsFederateGetMessage
+<span class="token number">155912</span>:0000000000043ea0 T _helicsFederateGetMessageObject
+<span class="token number">155913</span>:0000000000024210 T _helicsFederateGetName
+<span class="token number">155914</span>:0000000000034f00 T _helicsFederateGetPublication
+<span class="token number">155915</span>:00000000000351c0 T _helicsFederateGetPublicationByIndex
+<span class="token number">155916</span>:00000000000392d0 T _helicsFederateGetPublicationCount
+<span class="token number">155917</span>:00000000000240d0 T _helicsFederateGetState
+<span class="token number">155918</span>:00000000000359d0 T _helicsFederateGetSubscription
+<span class="token number">155919</span>:0000000000024430 T _helicsFederateGetTimeProperty
+<span class="token number">155920</span>:0000000000043590 T _helicsFederateHasMessage
+<span class="token number">155921</span>:00000000000201a0 T _helicsFederateInfoClone
+<span class="token number">155922</span>:0000000000020350 T _helicsFederateInfoFree
+<span class="token number">155923</span>:00000000000203e0 T _helicsFederateInfoLoadFromArgs
+<span class="token number">155924</span>:0000000000020b30 T _helicsFederateInfoSetBroker
+<span class="token number">155925</span>:00000000000207d0 T _helicsFederateInfoSetBrokerInitString
+<span class="token number">155926</span>:0000000000020c10 T _helicsFederateInfoSetBrokerKey
+<span class="token number">155927</span>:0000000000020cf0 T _helicsFederateInfoSetBrokerPort
+<span class="token number">155928</span>:00000000000206f0 T _helicsFederateInfoSetCoreInitString
+<span class="token number">155929</span>:00000000000205e0 T _helicsFederateInfoSetCoreName
+<span class="token number">155930</span>:00000000000208b0 T _helicsFederateInfoSetCoreType
+<span class="token number">155931</span>:0000000000020900 T _helicsFederateInfoSetCoreTypeFromString
+<span class="token number">155932</span>:0000000000020f10 T _helicsFederateInfoSetFlagOption
+<span class="token number">155933</span>:0000000000021050 T _helicsFederateInfoSetIntegerProperty
+<span class="token number">155934</span>:0000000000020d40 T _helicsFederateInfoSetLocalPort
+<span class="token number">155935</span>:0000000000021000 T _helicsFederateInfoSetSeparator
+<span class="token number">155936</span>:0000000000020f70 T _helicsFederateInfoSetTimeProperty
+<span class="token number">155937</span>:0000000000023200 T _helicsFederateIsAsyncOperationCompleted
+<span class="token number">155938</span>:0000000000022bd0 T _helicsFederateIsValid
+<span class="token number">155939</span>:0000000000024bf0 T _helicsFederateLogDebugMessage
+<span class="token number">155940</span>:0000000000024aa0 T _helicsFederateLogErrorMessage
+<span class="token number">155941</span>:0000000000024bc0 T _helicsFederateLogInfoMessage
+<span class="token number">155942</span>:0000000000024ad0 T _helicsFederateLogLevelMessage
+<span class="token number">155943</span>:0000000000024b90 T _helicsFederateLogWarningMessage
+<span class="token number">155944</span>:0000000000043680 T _helicsFederatePendingMessages
+<span class="token number">155945</span>:0000000000034de0 T _helicsFederatePublishJSON
+<span class="token number">155946</span>:0000000000049d30 T _helicsFederateRegisterCloningFilter
+<span class="token number">155947</span>:0000000000041310 T _helicsFederateRegisterEndpoint
+<span class="token number">155948</span>:0000000000049180 T _helicsFederateRegisterFilter
+<span class="token number">155949</span>:0000000000034cc0 T _helicsFederateRegisterFromPublicationJSON
+<span class="token number">155950</span>:000000000004a000 T _helicsFederateRegisterGlobalCloningFilter
+<span class="token number">155951</span>:00000000000417f0 T _helicsFederateRegisterGlobalEndpoint
+<span class="token number">155952</span>:0000000000049630 T _helicsFederateRegisterGlobalFilter
+<span class="token number">155953</span>:0000000000034860 T _helicsFederateRegisterGlobalInput
+<span class="token number">155954</span>:0000000000033900 T _helicsFederateRegisterGlobalPublication
+<span class="token number">155955</span>:0000000000034500 T _helicsFederateRegisterGlobalTypeInput
+<span class="token number">155956</span>:00000000000335a0 T _helicsFederateRegisterGlobalTypePublication
+<span class="token number">155957</span>:00000000000340a0 T _helicsFederateRegisterInput
+<span class="token number">155958</span>:0000000000022ee0 T _helicsFederateRegisterInterfaces
+<span class="token number">155959</span>:0000000000033140 T _helicsFederateRegisterPublication
+<span class="token number">155960</span>:0000000000032770 T _helicsFederateRegisterSubscription
+<span class="token number">155961</span>:0000000000033d40 T _helicsFederateRegisterTypeInput
+<span class="token number">155962</span>:0000000000032c90 T _helicsFederateRegisterTypePublication
+<span class="token number">155963</span>:00000000000239f0 T _helicsFederateRequestNextStep
+<span class="token number">155964</span>:0000000000023750 T _helicsFederateRequestTime
+<span class="token number">155965</span>:0000000000023890 T _helicsFederateRequestTimeAdvance
+<span class="token number">155966</span>:0000000000023ce0 T _helicsFederateRequestTimeAsync
+<span class="token number">155967</span>:0000000000023d70 T _helicsFederateRequestTimeComplete
+<span class="token number">155968</span>:0000000000023b20 T _helicsFederateRequestTimeIterative
+<span class="token number">155969</span>:0000000000023e60 T _helicsFederateRequestTimeIterativeAsync
+<span class="token number">155970</span>:0000000000023f10 T _helicsFederateRequestTimeIterativeComplete
+<span class="token number">155971</span>:0000000000024310 T _helicsFederateSetFlagOption
+<span class="token number">155972</span>:0000000000024790 T _helicsFederateSetGlobal
+<span class="token number">155973</span>:00000000000243b0 T _helicsFederateSetIntegerProperty
+<span class="token number">155974</span>:00000000000248c0 T _helicsFederateSetLogFile
+<span class="token number">155975</span>:000000000004e1c0 T _helicsFederateSetLoggingCallback
+<span class="token number">155976</span>:0000000000024670 T _helicsFederateSetSeparator
+<span class="token number">155977</span>:0000000000024290 T _helicsFederateSetTimeProperty
+<span class="token number">155978</span>:000000000004b210 T _helicsFilterAddDeliveryEndpoint
+<span class="token number">155979</span>:000000000004b010 T _helicsFilterAddDestinationTarget
+<span class="token number">155980</span>:000000000004b110 T _helicsFilterAddSourceTarget
+<span class="token number">155981</span>:000000000004b5f0 T _helicsFilterGetInfo
+<span class="token number">155982</span>:000000000004ace0 T _helicsFilterGetName
+<span class="token number">155983</span>:000000000004b8e0 T _helicsFilterGetOption
+<span class="token number">155984</span>:000000000004b4f0 T _helicsFilterRemoveDeliveryEndpoint
+<span class="token number">155985</span>:000000000004b3f0 T _helicsFilterRemoveTarget
+<span class="token number">155986</span>:000000000004adc0 T _helicsFilterSet
+<span class="token number">155987</span>:000000000004b770 T _helicsFilterSetInfo
+<span class="token number">155988</span>:000000000004b850 T _helicsFilterSetOption
+<span class="token number">155989</span>:000000000004aed0 T _helicsFilterSetString
+<span class="token number">155990</span>:0000000000004520 T _helicsGetFederateByName
+<span class="token number">155991</span>:0000000000020e80 T _helicsGetOptionIndex
+<span class="token number">155992</span>:0000000000020df0 T _helicsGetPropertyIndex
+<span class="token number">155993</span>:0000000000002300 T _helicsGetVersion
+<span class="token number">155994</span>:0000000000036750 T _helicsInputAddTarget
+<span class="token number">155995</span>:0000000000039260 T _helicsInputClearUpdate
+<span class="token number">155996</span>:0000000000036ce0 T _helicsInputGetBoolean
+<span class="token number">155997</span>:0000000000036ee0 T _helicsInputGetChar
+<span class="token number">155998</span>:0000000000036f90 T _helicsInputGetComplex
+<span class="token number">155999</span>:00000000000370d0 T _helicsInputGetComplexObject
+<span class="token number">156000</span>:0000000000036d90 T _helicsInputGetDouble
+<span class="token number">156001</span>:00000000000387d0 T _helicsInputGetExtractionUnits
+<span class="token number">156002</span>:0000000000038970 T _helicsInputGetInfo
+<span class="token number">156003</span>:00000000000386e0 T _helicsInputGetInjectionUnits
+<span class="token number">156004</span>:0000000000036c40 T _helicsInputGetInteger
+<span class="token number">156005</span>:0000000000038440 T _helicsInputGetKey
+<span class="token number">156006</span>:0000000000037400 T _helicsInputGetNamedPoint
+<span class="token number">156007</span>:0000000000038d90 T _helicsInputGetOption
+<span class="token number">156008</span>:0000000000038220 T _helicsInputGetPublicationType
+<span class="token number">156009</span>:00000000000369b0 T _helicsInputGetRawValue
+<span class="token number">156010</span>:0000000000036900 T _helicsInputGetRawValueSize
+<span class="token number">156011</span>:0000000000036b60 T _helicsInputGetString
+<span class="token number">156012</span>:0000000000037280 T _helicsInputGetStringSize
+<span class="token number">156013</span>:0000000000036e30 T _helicsInputGetTime
+<span class="token number">156014</span>:0000000000038130 T _helicsInputGetType
+<span class="token number">156015</span>:00000000000388c0 T _helicsInputGetUnits
+<span class="token number">156016</span>:0000000000037310 T _helicsInputGetVector
+<span class="token number">156017</span>:00000000000371f0 T _helicsInputGetVectorSize
+<span class="token number">156018</span>:0000000000039110 T _helicsInputIsUpdated
+<span class="token number">156019</span>:0000000000039180 T _helicsInputLastUpdateTime
+<span class="token number">156020</span>:0000000000037ae0 T _helicsInputSetDefaultBoolean
+<span class="token number">156021</span>:0000000000037cb0 T _helicsInputSetDefaultChar
+<span class="token number">156022</span>:0000000000037d40 T _helicsInputSetDefaultComplex
+<span class="token number">156023</span>:0000000000037b80 T _helicsInputSetDefaultDouble
+<span class="token number">156024</span>:0000000000037a50 T _helicsInputSetDefaultInteger
+<span class="token number">156025</span>:0000000000037fa0 T _helicsInputSetDefaultNamedPoint
+<span class="token number">156026</span>:0000000000037680 T _helicsInputSetDefaultRaw
+<span class="token number">156027</span>:0000000000037930 T _helicsInputSetDefaultString
+<span class="token number">156028</span>:0000000000037c10 T _helicsInputSetDefaultTime
+<span class="token number">156029</span>:0000000000037df0 T _helicsInputSetDefaultVector
+<span class="token number">156030</span>:0000000000038a60 T _helicsInputSetInfo
+<span class="token number">156031</span>:00000000000390c0 T _helicsInputSetMinimumChange
+<span class="token number">156032</span>:0000000000038e70 T _helicsInputSetOption
+<span class="token number">156033</span>:0000000000002380 T _helicsIsCoreTypeAvailable
+<span class="token number">156034</span>:00000000000455d0 T _helicsMessageAppendData
+<span class="token number">156035</span>:00000000000449c0 T _helicsMessageCheckFlag
+<span class="token number">156036</span>:00000000000452b0 T _helicsMessageClearFlags
+<span class="token number">156037</span>:00000000000447f0 T _helicsMessageGetDestination
+<span class="token number">156038</span>:0000000000044970 T _helicsMessageGetMessageID
+<span class="token number">156039</span>:00000000000448b0 T _helicsMessageGetOriginalDestination
+<span class="token number">156040</span>:0000000000044850 T _helicsMessageGetOriginalSource
+<span class="token number">156041</span>:0000000000044b40 T _helicsMessageGetRawData
+<span class="token number">156042</span>:0000000000044cb0 T _helicsMessageGetRawDataPointer
+<span class="token number">156043</span>:0000000000044ae0 T _helicsMessageGetRawDataSize
+<span class="token number">156044</span>:0000000000044790 T _helicsMessageGetSource
+<span class="token number">156045</span>:0000000000044a80 T _helicsMessageGetString
+<span class="token number">156046</span>:0000000000044910 T _helicsMessageGetTime
+<span class="token number">156047</span>:0000000000044d10 T _helicsMessageIsValid
+<span class="token number">156048</span>:00000000000451b0 T _helicsMessageReserve
+<span class="token number">156049</span>:0000000000045100 T _helicsMessageResize
+<span class="token number">156050</span>:0000000000045570 T _helicsMessageSetData
+<span class="token number">156051</span>:0000000000044ea0 T _helicsMessageSetDestination
+<span class="token number">156052</span>:00000000000452f0 T _helicsMessageSetFlagOption
+<span class="token number">156053</span>:0000000000045260 T _helicsMessageSetMessageID
+<span class="token number">156054</span>:0000000000045000 T _helicsMessageSetOriginalDestination
+<span class="token number">156055</span>:0000000000044f50 T _helicsMessageSetOriginalSource
+<span class="token number">156056</span>:0000000000044df0 T _helicsMessageSetSource
+<span class="token number">156057</span>:00000000000454c0 T _helicsMessageSetString
+<span class="token number">156058</span>:00000000000450b0 T _helicsMessageSetTime
+<span class="token number">156059</span>:0000000000036670 T _helicsPublicationAddTarget
+<span class="token number">156060</span>:0000000000038b80 T _helicsPublicationGetInfo
+<span class="token number">156061</span>:00000000000385f0 T _helicsPublicationGetKey
+<span class="token number">156062</span>:0000000000038f00 T _helicsPublicationGetOption
+<span class="token number">156063</span>:0000000000038350 T _helicsPublicationGetType
+<span class="token number">156064</span>:00000000000388e0 T _helicsPublicationGetUnits
+<span class="token number">156065</span>:0000000000036130 T _helicsPublicationPublishBoolean
+<span class="token number">156066</span>:00000000000362d0 T _helicsPublicationPublishChar
+<span class="token number">156067</span>:0000000000036350 T _helicsPublicationPublishComplex
+<span class="token number">156068</span>:00000000000361b0 T _helicsPublicationPublishDouble
+<span class="token number">156069</span>:0000000000036080 T _helicsPublicationPublishInteger
+<span class="token number">156070</span>:0000000000036560 T _helicsPublicationPublishNamedPoint
+<span class="token number">156071</span>:0000000000035da0 T _helicsPublicationPublishRaw
+<span class="token number">156072</span>:0000000000035fa0 T _helicsPublicationPublishString
+<span class="token number">156073</span>:0000000000036230 T _helicsPublicationPublishTime
+<span class="token number">156074</span>:0000000000036430 T _helicsPublicationPublishVector
+<span class="token number">156075</span>:0000000000038c70 T _helicsPublicationSetInfo
+<span class="token number">156076</span>:0000000000039070 T _helicsPublicationSetMinimumChange
+<span class="token number">156077</span>:0000000000038fe0 T _helicsPublicationSetOption
+<span class="token number">156078</span>:0000000000007df0 T _helicsQueryBrokerExecute
+<span class="token number">156079</span>:0000000000007cd0 T _helicsQueryCoreExecute
+<span class="token number">156080</span>:0000000000007aa0 T _helicsQueryExecute
+<span class="token number">156081</span>:0000000000007f10 T _helicsQueryExecuteAsync
+<span class="token number">156082</span>:00000000000081c0 T _helicsQueryExecuteComplete
+<span class="token number">156083</span>:0000000000008430 T _helicsQueryFree
+<span class="token number">156084</span>:0000000000008370 T _helicsQueryIsCompleted
+<span class="token number">156085</span>:0000000000038530 T _helicsSubscriptionGetKey
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br></div></div><p>Let's look at what some of them do.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/HELICS-Tutorial-2020-03-13/beginner/a-cosimulation-example.html" class="prev">
+        A Cosimulation Example
+      </a></span> <span class="next"><a href="/HELICS-Tutorial-2020-03-13/beginner/helics-building-blocks.html">
+        Building Blocks of HELICS
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/HELICS-Tutorial-2020-03-13/assets/js/app.33e126a5.js" defer></script><script src="/HELICS-Tutorial-2020-03-13/assets/js/2.e4476a02.js" defer></script><script src="/HELICS-Tutorial-2020-03-13/assets/js/21.d0c7c791.js" defer></script>
+  </body>
+</html>
