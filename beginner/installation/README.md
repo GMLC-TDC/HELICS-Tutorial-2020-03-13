@@ -75,7 +75,7 @@ Solving environment: done
 
 ## Package Plan ##
 
-  environment location: /Users/USER/miniconda3/envs/helics-test-env
+  environment location: /Users/USER/miniconda3/envs/helics-env
 
   added / updated specs:
     - helics
@@ -122,7 +122,7 @@ Solving environment: done
 
 ## Package Plan ##
 
-  environment location: /Users/USER/miniconda3/envs/helics-test-env
+  environment location: /Users/USER/miniconda3/envs/helics-env
 
   added / updated specs:
     - ipython
