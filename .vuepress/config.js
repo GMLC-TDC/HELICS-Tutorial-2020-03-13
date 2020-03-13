@@ -27,9 +27,10 @@ module.exports = {
             children: [
               '/beginner/',
               '/beginner/installation/',
-              '/beginner/cosimulation-example',
+              '/beginner/a-cosimulation-example',
               '/beginner/inside-a-helics-install',
               '/beginner/helics-building-blocks',
+              '/beginner/revisiting-a-co-simulation-example',
             ]
         },
         {
