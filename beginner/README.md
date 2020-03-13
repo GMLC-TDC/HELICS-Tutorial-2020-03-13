@@ -155,7 +155,7 @@ This C/C++ shared library interfaces with the broker in other to communicate wit
 
 See [Key Concepts](https://helics.readthedocs.io/en/latest/user-guide/helics_key_concepts.html) for more information.
 
-### HELICS useful references
+### Further reading
 
 - [https://helics.readthedocs.io/en/latest/user-guide/helics_co-sim_sequence.html](https://helics.readthedocs.io/en/latest/user-guide/helics_co-sim_sequence.html)
 - [https://helics.readthedocs.io/en/latest/user-guide/federates.html](https://helics.readthedocs.io/en/latest/user-guide/federates.html)
