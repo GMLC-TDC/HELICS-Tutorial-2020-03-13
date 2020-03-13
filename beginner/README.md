@@ -155,7 +155,7 @@ This C/C++ shared library interfaces with the broker in other to communicate wit
 
 See [Key Concepts](https://helics.readthedocs.io/en/latest/user-guide/helics_key_concepts.html) for more information.
 
-### HELICS Co-Simulation
+### HELICS useful references
 
 - https://helics.readthedocs.io/en/latest/user-guide/helics_co-sim_sequence.html
 - https://helics.readthedocs.io/en/latest/user-guide/federates.html
@@ -164,8 +164,3 @@ See [Key Concepts](https://helics.readthedocs.io/en/latest/user-guide/helics_key
 - https://helics.readthedocs.io/en/latest/user-guide/timing.html
 - https://helics.readthedocs.io/en/latest/user-guide/simulator_integration.html
 - https://helics.readthedocs.io/en/latest/user-guide/simultaneous_cosimulations.html
-
-## Examples
-
-- [Example 1](./example-1/README.md)
-- [Example 2](./example-2/README.md)
