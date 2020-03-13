@@ -57,3 +57,23 @@ while h.helicsBrokerIsConnected(broker):
 
 h.helicsBrokerDisconnect(broker)
 ```
+
+You may want to consider using `atexit`:
+
+```
+import atexit
+
+def f_at_exit():
+
+    h.helicsFederateFinalize(fed)
+    h.helicsFederateFree(fed)
+
+    while h.helicsBrokerIsConnected(broker) is True:
+        time.sleep(1)
+
+    h.helicsBrokerDisconnect(broker)
+
+    h.helicsCloseLibrary()
+
+atexit.register(f_at_exit)
+```
