@@ -1,0 +1,13 @@
+{
+  "coreType": "zmq",
+  "loglevel": 7,
+  "name": "sender",
+  "publications": [
+    {
+      "global": true,
+      "key": "topicA",
+      "required": true,
+      "type": "double"
+    }
+  ]
+}
