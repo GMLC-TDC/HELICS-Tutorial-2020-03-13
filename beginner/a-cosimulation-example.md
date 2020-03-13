@@ -103,6 +103,12 @@ and `receiver.json`:
 }
 ```
 
+You'll also need to run `helics_broker` in a separate window.
+
+```
+helics_broker -f 2
+```
+
 ## Output
 
 This is the output of sender.py and receiver.py.
