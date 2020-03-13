@@ -51,7 +51,7 @@ Running it will give us the same output as earlier.
 We should not forget to clean up after ourselves.
 We need to disconnect the broker before calling `helicsCloseLibrary`
 
-```
+```python
 while h.helicsBrokerIsConnected(broker):
     time.sleep(1)
 
@@ -60,7 +60,7 @@ h.helicsBrokerDisconnect(broker)
 
 You may want to consider using `atexit`:
 
-```
+```python
 import atexit
 
 def f_at_exit():
