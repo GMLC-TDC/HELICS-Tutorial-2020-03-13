@@ -68,6 +68,7 @@ Executing transaction: done
 **Install HELICS using `conda`**
 
 ```bash
+$ conda activate helics-env
 $ conda install -c gmlc-tdc helics
 
 Collecting package metadata (current_repodata.json): done
