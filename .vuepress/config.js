@@ -41,6 +41,7 @@ module.exports = {
             sidebarDepth: 1,
             children: [
               '/advanced/',
+              '/advanced/values-vs-messages/',
             ]
         },
     ],
