@@ -32,6 +32,7 @@ module.exports = {
               '/beginner/helics-building-blocks',
               '/beginner/revisiting-a-co-simulation-example',
               '/beginner/a-note-on-timing',
+              '/beginner/debugging-helics-cosimulation-tips',
             ]
         },
         {
