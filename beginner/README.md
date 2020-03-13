@@ -11,10 +11,10 @@ In order to simulate real world systems, we may need to either
 Simplifying models can result in loss of accuracy, which may be unacceptable in some scenarios.
 Some problems may not be decomposable or parallelizable.
 Some tools may exist that solve a subsystem well, but using a bigger computer may not be feasible if the tool does not scale well.
-Various domains, and sometimes problems in various time scales of the _same_ domain, may utilize different models, different kinds of simulation techniques, or just different tools in general.
-For example, you may 1) formulate and solve a Mixed Integer Linear Programming (MILP) optimization problem, 2) setup an iterative algorithm that approximates the solution to a non linear problem, 3) solve a set of linear analytical equations, 4) solve a set of dynamic differential equations, etc
-Each of the above methods aims to solve a mathematical problem, and each of them require a different modeling and simulation technique.
 
+Various domains, and sometimes problems in various time scales of the _same_ domain, may utilize different models, different kinds of simulation techniques, or just different tools in general.
+For example, you may 1) formulate and solve a Mixed Integer Linear Programming (MILP) optimization problem, 2) setup an iterative algorithm that approximates the solution to a non linear problem, 3) solve a set of linear analytical equations, 4) solve a set of dynamic differential equations, etc.
+Each of the above methods aims to solve a mathematical problem, and each of them require a different modeling and simulation technique.
 Since parts of larger systems are modeled and simulated by different techniques, tools, and algorithms, it can be useful to couple these techniques, tools and algorithms to study the larger system itself.
 
 Co-simulation is a technique where the simulation of a coupled system can be achieved by composing the simulations of its parts.
