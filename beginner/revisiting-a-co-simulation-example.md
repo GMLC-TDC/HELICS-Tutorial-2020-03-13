@@ -1,4 +1,4 @@
-# Revisiting A Cosimulation Example
+# Revisiting the Cosimulation Example
 
 Let's take a closer look at the simple co-simulation from earlier.
 
