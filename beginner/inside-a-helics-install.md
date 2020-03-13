@@ -4,7 +4,7 @@
 
 Let's say that I've installed HELICS in `~/local/helics-v2.4.1`. Let's look at what's in that folder:
 
-```
+```bash
 $ ls ~/local/helics-v2.4.1/
 
 Permissions Size Date Modified Name
@@ -18,7 +18,7 @@ We have a `bin` for binary files, a `include` for header files, a `lib` for libr
 
 Let's see what's in the `bin` folder:
 
-```
+```bash
 $ ls ~/local/helics-v2.4.1/bin
 
 Permissions Size Date Modified Name
@@ -34,7 +34,7 @@ My "installation" is a build from source and is a "debug" build. That is why the
 
 Let's look at some files from a pre-packaged installer, such as `conda`.
 
-```
+```bash
 $ ls /Users/USER/miniconda3/envs/helics-pip-env/bin/helics_*
 
 Permissions Size Date Modified Name
@@ -49,7 +49,7 @@ That is just around 300 bytes.
 
 Let's go ahead and run `man helics_broker`.
 
-```
+```bash
 $ man helics_broker
 
 HELICS_BROKER(1)                                          HELICS_BROKER(1)
@@ -81,7 +81,7 @@ We will go through some of that in this tutorial.
 
 Let's peek inside the library `lib` folder.
 
-```
+```bash
 $ ls ~/local/helics-v2.4.1/lib
 
 Permissions Size Date Modified Name
@@ -92,7 +92,7 @@ lrwxr-xr-x    26  3 Mar 07:41  libhelicsSharedLib.dylib -> libhelicsSharedLib.2.
 
 And finally, let's look at what is in the `include` folder:
 
-```
+```bash
 $ tree ~/local/helics-v2.4.1/include
 
 /Users/USER/local/helics-v2.4.1/include
@@ -129,7 +129,7 @@ $ tree ~/local/helics-v2.4.1/include
 You'll notice that this installation does not have any Python files in them.
 However, we can use HELICS in Python by loading the shared library in the lib folder, and calling functions using the C API.
 
-```
+```python
 ipython
 Python 3.7.6 (default, Jan  8 2020, 13:42:34)
 Type 'copyright', 'credits' or 'license' for more information
@@ -143,7 +143,7 @@ In [2]: lib = ctypes.CDLL("~/local/helics-v2.4.1/lib/libhelicsSharedL
 
 Let's call the `helicsGetVersion` function.
 
-```
+```python
 In [3]: lib.helicsGetVersion()
 Out[3]: 182664400
 ```
@@ -153,23 +153,26 @@ However, we know that this number is a pointer to a string.
 
 We can tell Python that the return type is a `char *` type, i.e. a pointer to a char.
 
-```
+```python
 In [5]: lib.helicsGetVersion.restype = ctypes.c_char_p
 ```
 
 If we call the function again, we can get the version number.
 
-```
+```python
 In [6]: lib.helicsGetVersion()
 Out[6]: b'2.4.0 (2020-02-04)'
 ```
 
 This is an example of how to call a C function from Python.
+Finding the types of every function can be tedious.
+Fortunately, we have a Python library mimics the C API function in Python function.
 
-There are a lot of other functions in HELICS available through the C API.
+There are a lot of other functions in HELICS available through the C API, and all these functions are exposed in the Python library as well.
 
-```
-nm ~/local/helics-v2.4.1/lib/libhelicsSharedLib.2.4.1.dylib | rg '_helics'
+```bash
+$ nm ~/local/helics-v2.4.1/lib/libhelicsSharedLib.2.4.1.dylib | rg '_helics'
+
 155810:0000000000005ea0 T _helicsBrokerAddDestinationFilterToEndpoint
 155811:0000000000005d90 T _helicsBrokerAddSourceFilterToEndpoint
 155812:00000000000056f0 T _helicsBrokerClone
@@ -447,3 +450,5 @@ nm ~/local/helics-v2.4.1/lib/libhelicsSharedLib.2.4.1.dylib | rg '_helics'
 156084:0000000000008370 T _helicsQueryIsCompleted
 156085:0000000000038530 T _helicsSubscriptionGetKey
 ```
+
+Let's look at what some of them do.
