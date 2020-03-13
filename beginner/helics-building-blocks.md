@@ -269,3 +269,10 @@ Eventually, once all the federates have left, the rest of the infrastructure dis
 Messages are the the information passed between federates during the execution of the co-simulation. Fundamentally, co-simulation is about message-passing.
 In HELICS, there are various techniques and implementations of the message-passing infrastructure that have been implemented in the core.
 There are also a variety of mechanisms within a co-simulation to define the nature of the data being exchanged (data type, for example) and how the data is distributed around the federation.
+
+There are additional attributes in the `helics` package that have underscore in their names.
+They are enumerations of various options.
+
+You can find more information on this documentation page:
+
+https://gmlc-tdc.github.io/HELICS.jl/latest/api/
