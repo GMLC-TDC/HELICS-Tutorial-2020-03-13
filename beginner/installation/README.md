@@ -171,6 +171,10 @@ Executing transaction: done
 
 Run the following in Python to make sure everything was installed correctly:
 
+```bash
+conda activate helics-env
+```
+
 ```python
 import helics as h
 h.helicsGetVersion()
