@@ -1,4 +1,4 @@
-# Cosimulation Example
+# A Cosimulation Example
 
 This is an example of a simple sender and receiver Python HELICS federation.
 
