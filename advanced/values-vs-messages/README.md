@@ -1,4 +1,4 @@
-# Values versus Messages
+# Values vs Messages
 
 |`Publication`/`Inputs` Values                                       | `Endpoint`                                             |
 |:------------------------------------------------------------------:|:------------------------------------------------------:|

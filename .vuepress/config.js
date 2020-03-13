@@ -42,6 +42,12 @@ module.exports = {
             children: [
               '/advanced/',
               '/advanced/values-vs-messages/',
+              '/advanced/filters/',
+              '/advanced/async/',
+              '/advanced/callbacks/',
+              '/advanced/helics-cli/',
+              '/advanced/multi-node/',
+              '/advanced/co-iteration/',
             ]
         },
     ],
