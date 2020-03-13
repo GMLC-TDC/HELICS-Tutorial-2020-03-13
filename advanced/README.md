@@ -1,4 +1,6 @@
-# Advanced Concepts in HELICS
+# Introduction
+
+## Advanced concepts in HELICS
 
 1. Values vs. Messages
 1. What are Filters and why should I care?
