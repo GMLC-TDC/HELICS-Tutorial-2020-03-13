@@ -1,4 +1,4 @@
-name: helics-pip-env
+name: helics-env
 channels:
   - gmlc-tdc
   - defaults
@@ -84,4 +84,4 @@ dependencies:
   - zlib=1.2.11=h1de35cc_3
   - pip:
     - helics-apps==2.4.1
-prefix: ~/miniconda3/envs/helics-pip-env
+prefix: helics-env

@@ -1,53 +1,93 @@
 # Installation
 
+## Editor / Environment set up
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+
 ## Python Installation Instructions
 
 **Install Miniconda**
 
 - [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-**Install HELICS using `conda`**
+If you have anaconda, you can continue to use that.
+
+**Install HELICS in a environment (recommended)**
 
 ```bash
-conda install -c gmlc-tdc helics
-```
+$ conda create -n helics-env python=3.7
 
-```
 Collecting package metadata (current_repodata.json): done
 Solving environment: done
 
 ## Package Plan ##
 
-  environment location: /Users/USER/miniconda3/envs/helics-pip-env
+  environment location: /Users/USER/miniconda3/envs/helics-env
+
+  added / updated specs:
+    - python=3.7
+
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/osx-64::ca-certificates-2020.1.1-0
+  certifi            pkgs/main/osx-64::certifi-2019.11.28-py37_0
+  libcxx             pkgs/main/osx-64::libcxx-4.0.1-hcfea43d_1
+  libcxxabi          pkgs/main/osx-64::libcxxabi-4.0.1-hcfea43d_1
+  libedit            pkgs/main/osx-64::libedit-3.1.20181209-hb402a30_0
+  libffi             pkgs/main/osx-64::libffi-3.2.1-h475c297_4
+  ncurses            pkgs/main/osx-64::ncurses-6.2-h0a44026_0
+  openssl            pkgs/main/osx-64::openssl-1.1.1d-h1de35cc_4
+  pip                pkgs/main/osx-64::pip-20.0.2-py37_1
+  python             pkgs/main/osx-64::python-3.7.6-h359304d_2
+  readline           pkgs/main/osx-64::readline-7.0-h1de35cc_5
+  setuptools         pkgs/main/osx-64::setuptools-46.0.0-py37_0
+  sqlite             pkgs/main/osx-64::sqlite-3.31.1-ha441bb4_0
+  tk                 pkgs/main/osx-64::tk-8.6.8-ha441bb4_0
+  wheel              pkgs/main/osx-64::wheel-0.34.2-py37_0
+  xz                 pkgs/main/osx-64::xz-5.2.4-h1de35cc_4
+  zlib               pkgs/main/osx-64::zlib-1.2.11-h1de35cc_3
+
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate helics-env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+```
+
+**Install HELICS using `conda`**
+
+```bash
+$ conda install -c gmlc-tdc helics
+
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /Users/USER/miniconda3/envs/helics-test-env
 
   added / updated specs:
     - helics
 
 
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    helics-2.4.1               |           py37_0         9.7 MB  gmlc-tdc
-    openssl-1.1.1d             |       h1de35cc_4         2.2 MB
-    ------------------------------------------------------------
-                                           Total:        11.9 MB
-
 The following NEW packages will be INSTALLED:
 
   helics             gmlc-tdc/osx-64::helics-2.4.1-py37_0
 
-The following packages will be UPDATED:
-
-  openssl                                 1.1.1d-h1de35cc_3 --> 1.1.1d-h1de35cc_4
-
 
 Proceed ([y]/n)? y
 
-
-Downloading and Extracting Packages
-helics-2.4.1         | 9.7 MB    | ################################################# | 100%
-openssl-1.1.1d       | 2.2 MB    | ################################################# | 100%
 Preparing transaction: done
 Verifying transaction: done
 Executing transaction: done
@@ -72,6 +112,61 @@ Installing collected packages: helics, helics-apps
 Successfully installed helics-2.4.1 helics-apps-2.4.1
 ```
 
+**Install IPython**
+
+```
+$ conda install ipython
+
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /Users/USER/miniconda3/envs/helics-test-env
+
+  added / updated specs:
+    - ipython
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    decorator-4.4.2            |             py_0          14 KB
+    ipython-7.13.0             |   py37h5ca1d4c_0         990 KB
+    ------------------------------------------------------------
+                                           Total:        1004 KB
+
+The following NEW packages will be INSTALLED:
+
+  appnope            pkgs/main/osx-64::appnope-0.1.0-py37_0
+  backcall           pkgs/main/osx-64::backcall-0.1.0-py37_0
+  decorator          pkgs/main/noarch::decorator-4.4.2-py_0
+  ipython            pkgs/main/osx-64::ipython-7.13.0-py37h5ca1d4c_0
+  ipython_genutils   pkgs/main/osx-64::ipython_genutils-0.2.0-py37_0
+  jedi               pkgs/main/osx-64::jedi-0.16.0-py37_0
+  parso              pkgs/main/noarch::parso-0.6.1-py_0
+  pexpect            pkgs/main/osx-64::pexpect-4.8.0-py37_0
+  pickleshare        pkgs/main/osx-64::pickleshare-0.7.5-py37_0
+  prompt_toolkit     pkgs/main/noarch::prompt_toolkit-3.0.3-py_0
+  ptyprocess         pkgs/main/osx-64::ptyprocess-0.6.0-py37_0
+  pygments           pkgs/main/noarch::pygments-2.5.2-py_0
+  six                pkgs/main/osx-64::six-1.14.0-py37_0
+  traitlets          pkgs/main/osx-64::traitlets-4.3.3-py37_0
+  wcwidth            pkgs/main/noarch::wcwidth-0.1.8-py_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+ipython-7.13.0       | 990 KB    | ######################################## | 100%
+decorator-4.4.2      | 14 KB     | ######################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+```
+
 **Check if it works**
 
 Run the following in Python to make sure everything was installed correctly:
@@ -85,6 +180,7 @@ This is the output from running it in the command line:
 
 ```
 $ python
+
 Python 3.7.6 (default, Jan  8 2020, 13:42:34)
 [Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -92,6 +188,23 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> h.helicsGetVersion()
 '2.4.1 (2020-03-06)'
 >>>
+```
+
+This is the same output from IPython.
+
+```
+$ ipython
+
+Python 3.7.6 (default, Jan  8 2020, 13:42:34)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.13.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import helics as h
+
+In [2]: h.helicsGetVersion()
+Out[2]: '2.4.1 (2020-03-06)'
+
+In [3]:
 ```
 
 ## Julia Installation Instructions
